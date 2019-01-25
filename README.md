@@ -56,7 +56,11 @@ Edit this document to include your answers after each question. Make sure to lea
 
 - Window/Global Binding. If "this" is in the global scope it will always reference the Window object.
 
-- Implicit Binding. "This" references the object preceding a function when using dot notation. ie: object.function (here "object" is referenced by the "this" keyword) 
+- Implicit Binding. Here the "this" keyword references the object preceding a method when using dot notation. ie: Dylan.age()... here "Dylan" is referenced by the "this" keyword and the method might be 
+
+function() {
+  console.log( `${this.age}` )
+} 
 
 - Explicit Binding. We control what this references using .call(), .apply(), or .bind() methods.
 
