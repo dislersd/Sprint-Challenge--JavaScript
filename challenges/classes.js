@@ -1,11 +1,5 @@
 // 1. Copy and paste your prototype in here and refactor into class syntax.
 
-// function CuboidMaker (props) {
-//   this.length = props.length;
-//   this.width = props.width;
-//   this.height = props.height;
-// }
-
 class CuboidMaker {
   constructor(props) {
     this.length = props.length;
@@ -34,7 +28,23 @@ console.log(cuboid.surfaceArea()); // 130
 
 class CubeMaker extends CuboidMaker {
   constructor(props) {
-    super(props)
+    super(props);
+    this.width = this.length;
+    this.height = this.length;
+
   }
-  
+  volume() {
+    return this.length ** 3;
+  }
+  surfaceArea() {
+    return 6 * (this.length ** 2);
+  }
 }
+
+let cube = new CubeMaker ({
+  length: 5,
+})
+
+
+console.log(cube.volume()); // 125
+console.log(cube.surfaceArea()); // 150
